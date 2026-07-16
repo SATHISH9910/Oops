@@ -1,0 +1,26 @@
+from abc import ABC,abstractmethod
+
+class Drone(ABC):
+    @abstractmethod
+    def take_action(self):
+        pass
+
+class AgricultureDrone(Drone):
+    def take_action(self):
+        print("agriculture drone is ready for fly")
+        print("---------------------")
+class DeliveDrone(Drone):
+    def take_action(self):
+        print("DElivery Drone is DELivered an Order")
+        print("---------------------")
+class SurveillanceDRone(Drone):
+    def take_action(self):
+        print("Found An Abnormal Activity")
+        print("---------------------")
+a=AgricultureDrone()
+d=DeliveDrone()
+S=SurveillanceDRone()
+
+a.take_action()
+d.take_action()
+S.take_action()
