@@ -1,26 +1,62 @@
-from abc import ABC,abstractmethod
+# from abc import ABC,abstractmethod
 
-class Drone(ABC):
+# class Drone(ABC):
+#     @abstractmethod
+#     def take_action(self):
+#         pass
+
+# class AgricultureDrone(Drone):
+#     def take_action(self):
+#         print("agriculture drone is ready for fly")
+#         print("---------------------")
+# class DeliveDrone(Drone):
+#     def take_action(self):
+#         print("DElivery Drone is DELivered an Order")
+#         print("---------------------")
+# class SurveillanceDRone(Drone):
+#     def take_action(self):
+#         print("Found An Abnormal Activity")
+#         print("---------------------")
+# a=AgricultureDrone()
+# d=DeliveDrone()
+# S=SurveillanceDRone()
+
+# a.take_action()
+# d.take_action()
+# S.take_action()
+
+# abstraction > is the process of hiding the implementation details,
+   #    showing only the eesesntial feature to the user#
+
+
+   #uses#
+   #hiding,code simple , improve securituy ,easire program
+
+
+
+from abc import ABC,abstractmethod
+class FarmMachine(ABC):
     @abstractmethod
-    def take_action(self):
+    def operate(self):
         pass
 
-class AgricultureDrone(Drone):
-    def take_action(self):
-        print("agriculture drone is ready for fly")
-        print("---------------------")
-class DeliveDrone(Drone):
-    def take_action(self):
-        print("DElivery Drone is DELivered an Order")
-        print("---------------------")
-class SurveillanceDRone(Drone):
-    def take_action(self):
-        print("Found An Abnormal Activity")
-        print("---------------------")
-a=AgricultureDrone()
-d=DeliveDrone()
-S=SurveillanceDRone()
+class IrrigationSystem(FarmMachine):
+    def operate(self):
+        print("IIrigation succesfull")
 
-a.take_action()
-d.take_action()
-S.take_action()
+class SeedSowingmachine(FarmMachine):
+    def operate(self):
+        print("SeedSowing is perfomed")
+
+class harvestMachine(FarmMachine):
+    def operate(self):
+     print("HArvest done")
+
+i=IrrigationSystem()
+s=SeedSowingmachine()
+h=harvestMachine()
+
+
+i.operate()
+s.operate()
+h.operate()          
